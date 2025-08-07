@@ -1,5 +1,16 @@
 #Made By Fan_Fan_tom
 
+
+
+
+
+scoreboard objectives add trap_max_timer dummy "陷阱最大時間"
+scoreboard objectives add trap_timer dummy "陷阱時間"
+
+
+
+
+
 team add waiting "等待中"
 team modify waiting color yellow
 team modify waiting friendlyFire false
@@ -15,7 +26,6 @@ team add runner "逃亡者"
 team modify runner color aqua
 team modify runner collisionRule never
 team modify runner friendlyFire false
-
 
 
 #禁止進入傳送門

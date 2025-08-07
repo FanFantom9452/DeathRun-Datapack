@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "hit": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "components": {
+            "minecraft:custom_data": "{trap:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:type/advancement/use_trap"
+  }
+}

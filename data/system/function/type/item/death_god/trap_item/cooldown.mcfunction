@@ -1,0 +1,6 @@
+#Made By Fan_Fan_tom
+item replace entity @s[team=death_god] hotbar.3 with paper[item_model="minecraft:red_wool",item_name=[{"bold":true,"color":"red","italic":false,"text":"冷卻中"}]] 1
+item replace entity @s[team=death_god] hotbar.4 with paper[item_model="minecraft:red_wool",item_name=[{"bold":true,"color":"red","italic":false,"text":"冷卻中"}]] 1
+item replace entity @s[team=death_god] hotbar.5 with paper[item_model="minecraft:red_wool",item_name=[{"bold":true,"color":"red","italic":false,"text":"冷卻中"}]] 1
+#頭顱
+item replace entity @s[team=death_god] armor.head with player_head[item_name={"bold":true,"color":"dark_purple","italic":false,"text":"死神"},enchantment_glint_override=true,enchantments={"minecraft:binding_curse":1,"minecraft:vanishing_curse":1},tooltip_display={hidden_components:["enchantments"]},profile={id:[I;-1266961795,-471055885,-1801601539,609018431],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWJhNWY5YTRjZWNlMTg4YzU4MDg1NjNhNGMwMzA5OWRkYjdkZDBmODQ1ZGI0OTVmNzBhMzFmMjI2NWIxMTFkOCJ9fX0="}]}] 1
