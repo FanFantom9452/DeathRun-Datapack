@@ -1,0 +1,5 @@
+#Made By Fan_Fan_tom
+execute unless score @s dash_front.cd matches -2147483648..2147483647 run item replace entity @s hotbar.4 with paper[item_model="minecraft:player_head",consumable={consume_seconds:1000000,animation:"spear"},item_name=[{"color":"aqua","italic":false,"text":"向前衝刺"},{"color":"gray","italic":false,"text":"("},{"color":"gray","keybind":"key.use"},{"color":"gray","italic":false,"text":")"}],custom_data={dash_front:1b},profile={id:[I;-621787147,-813674529,-1144465482,1992916943],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWNkYjhmNDM2NTZjMDZjNGU4NjgzZTJlNjM0MWI0NDc5ZjE1N2Y0ODA4MmZlYTRhZmYwOWIzN2NhM2M2OTk1YiJ9fX0="}]}] 1
+
+
+execute if score @s dash_front.cd matches 1.. run item replace entity @s hotbar.4 with paper[item_model="minecraft:barrier",item_name=[{"color":"red","italic":false,"text":"冷卻中"},{"color":"gray","italic":false,"text":"("},{"color":"gray","keybind":"key.use"},{"color":"gray","italic":false,"text":")"}]] 1

@@ -1,4 +1,4 @@
 #Made By Fan_Fan_tom
-clear @s[team=death_god] paper
+clear @s paper
 #頭顱
-item replace entity @s[team=death_god] armor.head with player_head[item_name={"bold":true,"color":"dark_purple","italic":false,"text":"死神"},enchantment_glint_override=true,enchantments={"minecraft:binding_curse":1,"minecraft:vanishing_curse":1},tooltip_display={hidden_components:["enchantments"]},profile={id:[I;-1023851097,-1764408633,-1494400595,129266138],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzI0NGM1MGM5ZjBjYWQ2MDhmYTUzMTE3MTZhMTY1Y2U0MDUwNDQ4ZTU3ZDE5YjM5MDQ3NzlmZWU4MjcyYTNhMiJ9fX0="}]}] 1
+item replace entity @s armor.head with player_head[item_name={"color":"dark_purple","italic":false,"text":"死神"},enchantment_glint_override=true,enchantments={"minecraft:binding_curse":1,"minecraft:vanishing_curse":1},tooltip_display={hidden_components:["enchantments"]},profile={id:[I;-1023851097,-1764408633,-1494400595,129266138],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzI0NGM1MGM5ZjBjYWQ2MDhmYTUzMTE3MTZhMTY1Y2U0MDUwNDQ4ZTU3ZDE5YjM5MDQ3NzlmZWU4MjcyYTNhMiJ9fX0="}]}] 1

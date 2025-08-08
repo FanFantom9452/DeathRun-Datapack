@@ -10,6 +10,8 @@ execute as @e[type=marker,tag=trap_reset_point] at @s run function system:type/t
 
 execute as @e[type=marker,tag=trap_trigger_point] at @s run particle dust{color:16711680,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative]
 
+execute as @e[type=marker,tag=finish_point] at @s run particle dust{color:15335679,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative]
 
+kill @e[type=item]
 
 schedule function system:type/tick 1t

@@ -17,3 +17,4 @@ give @s command_block[item_name="死神傳送點A",minecraft:item_model="minecra
 give @s command_block[item_name="死神傳送點B",minecraft:item_model="minecraft:ender_eye",enchantment_glint_override=true,block_entity_data={id:"command_block",auto:1b,Command:"function system:type/set/death_god_nether_teleport_door_b"}] 1
 
 
+give @s command_block[item_name="終點",minecraft:item_model="minecraft:mojang_banner_pattern",enchantment_glint_override=true,block_entity_data={id:"command_block",auto:1b,Command:"function system:type/set/finish_point"}] 1

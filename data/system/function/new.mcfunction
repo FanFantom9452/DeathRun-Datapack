@@ -8,7 +8,9 @@ scoreboard objectives add trap_max_timer dummy "陷阱最大時間"
 scoreboard objectives add trap_timer dummy "陷阱時間"
 
 
-
+scoreboard objectives add dash_front.cd dummy "向前dash 冷卻"
+scoreboard objectives add dash_left.cd dummy "向左dash 冷卻"
+scoreboard objectives add dash_right.cd dummy "向右dash 冷卻"
 
 
 team add waiting "等待中"

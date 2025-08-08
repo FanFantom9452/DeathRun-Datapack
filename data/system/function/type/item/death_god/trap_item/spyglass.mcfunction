@@ -1,2 +1,2 @@
 #Made By Fan_Fan_tom
-give @s spyglass[item_name={"bold":true,"color":"dark_purple","italic":false,"text":"死神"}]
+item replace entity @s hotbar.8 with spyglass[item_name={"color":"yellow","italic":false,"text":"觀察鏡"},attribute_modifiers=[{id:"camera_distance",type:"camera_distance",amount:10,operation:"add_value",slot:"mainhand",display:{type:"default"}}]] 1

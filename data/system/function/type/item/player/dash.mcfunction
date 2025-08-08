@@ -1,2 +1,0 @@
-#Made By Fan_Fan_tom
-item replace entity @s[team=runner] hotbar.0 with paper[item_model="minecraft:feather",consumable={consume_seconds:1000000,animation:"spear"},item_name=[{"bold":true,"color":"green","italic":false,"text":"DASH"},{"color":"gray","italic":false,"text":"("},{"color":"gray","keybind":"key.use"},{"color":"gray","italic":false,"text":")"}],custom_data={dash:1b}] 3

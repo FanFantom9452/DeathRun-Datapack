@@ -8,7 +8,7 @@ spawnpoint @a[team=runner] 21 83 16 90
 tp @a[team=death_god] 10 83 8 90 0
 spawnpoint @a[team=death_god] 10 83 8 90
 execute as @a[team=death_god] run function system:type/item/death_god/trap_item/clear
-execute as @a[team=runner] run function system:type/item/player/dash
+execute as @a[team=death_god] run function system:type/item/death_god/trap_item/spyglass
 effect give @a minecraft:instant_health 1 10 true
 
 execute as @a at @s run playsound block.note_block.pling master @s ~ ~ ~ 1 1 1

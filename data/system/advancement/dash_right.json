@@ -5,13 +5,13 @@
       "conditions": {
         "item": {
           "components": {
-            "minecraft:custom_data": "{dash:1b}"
+            "minecraft:custom_data": "{dash_right:1b}"
           }
         }
       }
     }
   },
   "rewards": {
-    "function": "system:type/advancement/dash"
+    "function": "system:type/advancement/dash_right"
   }
 }
