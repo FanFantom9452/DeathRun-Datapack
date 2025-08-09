@@ -19,7 +19,7 @@ scoreboard players reset @a dash_front.cd
 scoreboard players reset @a dash_left.cd
 scoreboard players reset @a dash_right.cd
 clear @a
-scoreboard players set @a[team=runner] life 99
+scoreboard players set @a[team=runner] life 5
 #重製排名
 scoreboard players reset * rank
 scoreboard players set @a[team=runner] rank -9487945

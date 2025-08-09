@@ -1,0 +1,27 @@
+[
+  {
+    "function": "minecraft:set_name",
+    "entity": "this",
+    "name": [
+      {
+        "text": "冷卻中",
+        "color": "red",
+        "italic": false
+      },
+      {
+        "text": "...(",
+        "color": "gray"
+      },
+      {
+        "score": {
+          "objective": "dash_right.cd",
+          "name": "tmp"
+        }
+      },
+      {
+        "text": ")",
+        "color": "gray"
+      }
+    ]
+  }
+]

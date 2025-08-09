@@ -1,4 +1,8 @@
 #Made By Fan_Fan_tom
 execute unless score @s dash_right.cd matches -2147483648..2147483647 run item replace entity @s hotbar.5 with paper[item_model="minecraft:player_head",consumable={consume_seconds:1000000,animation:"spear"},item_name=[{"color":"aqua","italic":false,"text":"向右衝刺"},{"color":"gray","italic":false,"text":"("},{"color":"gray","keybind":"key.use"},{"color":"gray","italic":false,"text":")"}],custom_data={dash_right:1b},profile={id:[I;-1427481120,-1575334649,-1112340981,1191727367],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzMzYWU4ZGU3ZWQwNzllMzhkMmM4MmRkNDJiNzRjZmNiZDk0YjM0ODAzNDhkYmI1ZWNkOTNkYThiODEwMTVlMyJ9fX0="}]}] 1
 
-execute if score @s dash_right.cd matches 1.. run item replace entity @s hotbar.5 with paper[item_model="minecraft:barrier",item_name=[{"color":"red","italic":false,"text":"冷卻中"},{"color":"gray","italic":false,"text":"("},{"color":"gray","keybind":"key.use"},{"color":"gray","italic":false,"text":")"}]] 1
+execute if score @s dash_right.cd matches 1.. run scoreboard players operation tmp dash_right.cd = @s dash_right.cd
+execute if score @s dash_right.cd matches 1.. run scoreboard players set #20 dash_right.cd 20
+execute if score @s dash_right.cd matches 1.. run scoreboard players operation tmp dash_right.cd /= #20 dash_right.cd
+execute if score @s dash_right.cd matches 1.. run item replace entity @s hotbar.5 with paper[item_model="minecraft:barrier",item_name=[{"color":"red","italic":false,"text":"冷卻中"}]] 1
+execute if score @s dash_right.cd matches 1.. run item modify entity @s hotbar.5 system:player/dash_right

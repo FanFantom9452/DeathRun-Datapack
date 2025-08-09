@@ -40,6 +40,14 @@ scoreboard objectives add rank dummy "名次"
 scoreboard objectives add status dummy "遊戲當前狀態"
 scoreboard players set status status 0
 
+scoreboard objectives add timer.tick dummy "耗時-刻"
+scoreboard objectives add timer.second dummy "耗時-秒"
+scoreboard objectives add timer.min dummy "耗時-分"
+
+scoreboard objectives add checkpoint.cd dummy "不能踩checkpoint 冷卻"
+
+
+
 team add waiting "等待中"
 team modify waiting color yellow
 team modify waiting friendlyFire false

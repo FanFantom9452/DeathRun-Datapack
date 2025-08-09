@@ -6,6 +6,7 @@ title @s subtitle [{text:"抵達終點",color:"yellow"}]
 title @s title [{text:"恭喜",color:"green"}]
 gamemode spectator @s
 tellraw @a [{selector:"@s"},{text:" 抵達終點",color:"yellow"}]
+tellraw @a [{text:"➥ 總耗時 ",color:"white"},{text:"(",color:"gray"},{score:{name:"@s",objective:"timer.min"},color:"gold"},{text:":",color:"gray"},{score:{name:"@s",objective:"timer.second"},color:"gold"},{text:".",color:"gray"},{score:{name:"@s",objective:"timer.tick"},color:"gold"},{text:")",color:"gray"}]
 playsound entity.player.levelup master @s ~ ~ ~ 1 1 1
 
 

@@ -9,6 +9,7 @@ title @a title [{text:" ",color:"white"}]
 bossbar set minecraft:time players @a
 scoreboard players set 剩餘時間 list 300
 execute store result bossbar minecraft:time max run scoreboard players get 剩餘時間 list
-
+#用時多久 啟動
+scoreboard players set timer status 1
 
 function system:type/time_left

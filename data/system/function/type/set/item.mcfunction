@@ -18,3 +18,15 @@ give @s command_block[item_name="死神傳送點B",minecraft:item_model="minecra
 
 
 give @s command_block[item_name="終點",minecraft:item_model="minecraft:mojang_banner_pattern",enchantment_glint_override=true,block_entity_data={id:"command_block",auto:1b,Command:"function system:type/set/finish_point"}] 1
+
+
+
+give @s green_wool[item_name="增加陷阱冷卻",max_stack_size=99] 99
+give @s red_wool[item_name="減少陷阱冷卻",max_stack_size=99] 99
+
+
+give @s green_concrete[item_name="增加陷阱持續時間",max_stack_size=99] 99
+give @s red_concrete[item_name="減少陷阱持續時間",max_stack_size=99] 99
+
+
+give @s arrow[item_name="調整死神傳送門角度",max_stack_size=99] 99
