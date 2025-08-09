@@ -8,9 +8,12 @@ execute as @e[type=marker,tag=trap_give_item_point] at @s run function system:ty
 #陷阱幾秒後會自動重製
 execute as @e[type=marker,tag=trap_reset_point] at @s run function system:type/trap_reset/tick
 
-execute as @e[type=marker,tag=trap_trigger_point] at @s run particle dust{color:16711680,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative]
+execute as @e[type=marker,tag=trap_trigger_point] at @s run particle dust{color:16711680,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative,distance=..100]
 
-execute as @e[type=marker,tag=finish_point] at @s run particle dust{color:15335679,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative]
+execute as @e[type=marker,tag=finish_point] at @s run particle dust{color:15335679,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative,distance=..100]
+
+execute as @e[type=marker,tag=firework_rocket] at @s run particle flame ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative,distance=..100]
+
 
 kill @e[type=item]
 

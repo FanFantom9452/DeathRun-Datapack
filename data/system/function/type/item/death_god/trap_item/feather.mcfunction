@@ -1,0 +1,2 @@
+#Made By Fan_Fan_tom
+item replace entity @s hotbar.0 with feather[item_name=[{"color":"yellow","italic":false,"text":"輕盈羽毛"},{"color":"gray","italic":false,"text":" - "},{"color":"aqua","italic":false,"text":"拿在主手最大幅度加速"}],attribute_modifiers=[{id:"camera_distance",type:"camera_distance",amount:10,operation:"add_value",slot:"mainhand",display:{type:"default"}},{id:"movement_speed",type:"movement_speed",amount:3,operation:"add_multiplied_total",slot:"mainhand",display:{type:"default"}}],enchantment_glint_override=true] 1

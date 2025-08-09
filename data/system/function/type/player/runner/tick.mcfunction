@@ -1,6 +1,7 @@
 #Made By Fan_Fan_tom
 attribute @s block_interaction_range base set 0
 #碰到傳送門 設置重生點
+execute if block ~ ~ ~ minecraft:nether_portal run title @s actionbar [{text:"已記錄重生點",color:"green",bold:true,underlined:true}]
 execute if block ~ ~ ~ minecraft:nether_portal run spawnpoint @s ~ ~ ~ ~
 #dash 物品
 execute if score @s dash_front.cd matches 1.. run scoreboard players remove @s dash_front.cd 1
@@ -15,6 +16,10 @@ function system:type/item/player/dash_right
 #碰到水死亡
 execute if block ~ ~ ~ water if biome ~ ~ ~ minecraft:the_end run damage @s 100 minecraft:drown
 
+
+
+#死亡處理
+execute if score @s death matches 1.. run function system:type/player/runner/death
 
 #抵達終點
 execute if entity @e[type=marker,tag=finish_point,distance=..15] if block ~ ~ ~ end_gateway run function system:type/player/get_finish_point

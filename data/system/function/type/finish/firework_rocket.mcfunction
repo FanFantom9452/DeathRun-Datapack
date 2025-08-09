@@ -1,0 +1,4 @@
+#Made By Fan_Fan_tom
+$playsound entity.firework_rocket.launch master @a[distance=..50] $(pos) 1 1 1
+$summon firework_rocket $(pos) {Life:$(start),LifeTime:$(end),FireworksItem:{id:"minecraft:firework_rocket",count:1,components:{"minecraft:fireworks":{explosions:[{shape:"large_ball",colors:[I;16711680],fade_colors:[I;16746496]},{shape:"large_ball",colors:[I;16746496],fade_colors:[I;15662848]},{shape:"large_ball",colors:[I;15662848],fade_colors:[I;3407616]},{shape:"large_ball",colors:[I;3407616],fade_colors:[I;65518]},{shape:"large_ball",colors:[I;65518],fade_colors:[I;4607]},{shape:"large_ball",colors:[I;4607],fade_colors:[I;8388863]},{shape:"large_ball",colors:[I;8388863],fade_colors:[I;16711867]},{shape:"large_ball",colors:[I;16711867],fade_colors:[I;16777215]}]}}}}
+#function system:type/finish/firework_rocket {pos:"~ ~1 ~",start:100,end:130}
