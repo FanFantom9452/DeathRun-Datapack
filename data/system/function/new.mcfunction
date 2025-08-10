@@ -35,10 +35,13 @@ scoreboard objectives add dash_front.cd dummy "向前dash 冷卻"
 scoreboard objectives add dash_left.cd dummy "向左dash 冷卻"
 scoreboard objectives add dash_right.cd dummy "向右dash 冷卻"
 
+scoreboard objectives add teleport_point.id dummy "傳送門ID"
+
 
 scoreboard objectives add rank dummy "名次"
 scoreboard objectives add status dummy "遊戲當前狀態"
 scoreboard players set status status 0
+execute unless score map status matches -2147483648..2147483647 run scoreboard players set map status 1
 
 scoreboard objectives add timer.tick dummy "耗時-刻"
 scoreboard objectives add timer.second dummy "耗時-秒"
@@ -46,7 +49,14 @@ scoreboard objectives add timer.min dummy "耗時-分"
 
 scoreboard objectives add checkpoint.cd dummy "不能踩checkpoint 冷卻"
 
+scoreboard objectives add command dummy "指令用 不重要的資料丟這裡"
+scoreboard objectives add sand_bomb dummy "沙漠炸彈 隨機偵測"
+#生成目標點(object)：
+kill @e[type=marker,tag=object]
+summon marker 0.0 0.0 0.0 {Tags:["object"]}
 
+#載入區塊，確保效果雲不會消失：
+forceload add -1 -1 0 0
 
 team add waiting "等待中"
 team modify waiting color yellow

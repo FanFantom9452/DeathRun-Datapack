@@ -3,5 +3,5 @@ schedule function system:type/start/4 1s
 
 execute as @a at @s run playsound ui.button.click master @s ~ ~ ~ 1 1 1
 title @a times 0 100 0
-title @a subtitle [{text:"遊戲即將開始",color:"yellow"}]
-title @a title [{text:"➎",color:"white"}]
+title @a subtitle [{text:"遊戲即將開始",color:"white"}]
+title @a title [{text:"➎",color:"aqua"}]

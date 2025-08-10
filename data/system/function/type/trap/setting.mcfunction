@@ -11,3 +11,7 @@ execute if entity @e[type=item,distance=..4,nbt={Item:{id:"minecraft:red_wool"}}
 
 execute if entity @e[type=item,distance=..4,nbt={Item:{id:"minecraft:green_concrete"}}] run scoreboard players add @n[type=marker,tag=trap_reset_point,distance=..10] trap_max_timer 20
 execute if entity @e[type=item,distance=..4,nbt={Item:{id:"minecraft:red_concrete"}}] run scoreboard players remove @n[type=marker,tag=trap_reset_point,distance=..10] trap_max_timer 20
+
+
+#remove
+execute if entity @e[type=item,distance=..4,nbt={Item:{id:"minecraft:bedrock"}}] run kill @s

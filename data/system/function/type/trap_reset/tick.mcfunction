@@ -7,3 +7,7 @@ execute if score @s trap_timer matches 1.. run function system:type/trap_reset/c
 execute if score @s trap_timer matches 0 run function system:type/trap_reset/reset_trap
 
 particle dust{color:5111552,scale:1f} ~ ~ ~ 0 0 0 0 1 force @a[gamemode=creative,distance=..100]
+
+
+#remove
+execute if entity @e[type=item,distance=..4,nbt={Item:{id:"minecraft:bedrock"}}] run kill @s

@@ -1,7 +1,7 @@
 #Made By Fan_Fan_tom
 advancement revoke @s only system:dash_front
 
-clear @s paper[custom_data~{dash_front:1b}] 1
+clear @s paper[custom_data~{dash_front:1b}]
 
 scoreboard players set $strength player_motion.api.launch 20000
 execute rotated ~ 0 run function player_motion:api/launch_looking

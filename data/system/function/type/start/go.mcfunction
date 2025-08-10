@@ -1,5 +1,8 @@
 #Made By Fan_Fan_tom
-fill 14 87 20 14 82 13 air destroy
+
+#Map
+function system:type/map/auto_choose_go with storage system:status
+
 
 execute as @a at @s run playsound entity.player.levelup master @s ~ ~ ~ 1 1 1
 title @a times 0 20 0

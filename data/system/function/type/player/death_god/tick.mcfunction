@@ -17,10 +17,3 @@ execute unless entity @e[type=marker,tag=trap_give_item_point,distance=..4] run 
 
 #手持望遠鏡
 execute if items entity @s weapon.* spyglass run effect give @a[team=runner,distance=..100] glowing 1 0 true
-
-
-#死神傳送門 A to B
-execute if block ~ ~ ~ nether_portal if entity @e[type=marker,tag=death_god_nether_teleport_door_a,distance=..5] run tp @s @n[type=marker,tag=death_god_nether_teleport_door_b,distance=..150]
-
-#死神傳送門 B to A
-execute if block ~ ~ ~ nether_portal if entity @e[type=marker,tag=death_god_nether_teleport_door_b,distance=..5] run tp @s @n[type=marker,tag=death_god_nether_teleport_door_a,distance=..150]

@@ -7,4 +7,8 @@ scoreboard players set status status 0
 scoreboard players set timer status 0
 clear @a
 
+#重設門
+function system:type/map/auto_choose_reset_start_door with storage system:status
+
+
 schedule clear system:type/time_left
