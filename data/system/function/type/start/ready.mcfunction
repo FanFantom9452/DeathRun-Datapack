@@ -1,4 +1,5 @@
 #Made By Fan_Fan_tom
+tag @a add playing
 gamemode adventure @a[team=runner]
 gamemode adventure @a[team=death_god]
 execute as @a[team=death_god] run function system:type/item/death_god/trap_item/clear
@@ -11,6 +12,7 @@ function system:type/map/auto_choose_ready with storage system:status
 #重設門
 function system:type/map/auto_choose_reset_start_door with storage system:status
 
+advancement revoke @a everything
 
 execute as @a at @s run playsound block.note_block.pling master @s ~ ~ ~ 1 1 1
 title @a times 20 100 20

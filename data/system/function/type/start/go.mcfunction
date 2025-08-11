@@ -10,9 +10,10 @@ title @a subtitle [{text:"遊戲開始",color:"aqua"}]
 title @a title [{text:" ",color:"white"}]
 
 bossbar set minecraft:time players @a
-scoreboard players set 剩餘時間 list 300
+scoreboard players operation 剩餘時間 list = time status
 execute store result bossbar minecraft:time max run scoreboard players get 剩餘時間 list
 #用時多久 啟動
 scoreboard players set timer status 1
 
-function system:type/time_left
+function system:type/show_time_left
+schedule function system:type/time_left 1s

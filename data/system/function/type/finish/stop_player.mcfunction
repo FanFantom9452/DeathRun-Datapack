@@ -1,8 +1,8 @@
 #Made By Fan_Fan_tom
 gamemode spectator @a
+#結算狀態
+scoreboard players set status status 2
 
-#遊戲狀態
-scoreboard players set status status 0
 #用時多久 close
 scoreboard players set timer status 0
 clear @a

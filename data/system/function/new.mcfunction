@@ -34,14 +34,20 @@ scoreboard objectives add trap_timer dummy "陷阱時間"
 scoreboard objectives add dash_front.cd dummy "向前dash 冷卻"
 scoreboard objectives add dash_left.cd dummy "向左dash 冷卻"
 scoreboard objectives add dash_right.cd dummy "向右dash 冷卻"
+execute unless score all_player_cd dash_front.cd matches -2147483648..2147483647 run scoreboard players set all_player_cd dash_front.cd 60
+execute unless score all_player_cd dash_left.cd matches -2147483648..2147483647 run scoreboard players set all_player_cd dash_left.cd 60
+execute unless score all_player_cd dash_right.cd matches -2147483648..2147483647 run scoreboard players set all_player_cd dash_right.cd 60
 
 scoreboard objectives add teleport_point.id dummy "傳送門ID"
 
 
 scoreboard objectives add rank dummy "名次"
 scoreboard objectives add status dummy "遊戲當前狀態"
-scoreboard players set status status 0
+execute unless score status status matches -2147483648..2147483647 run scoreboard players set status status 0
+execute unless score can_choose_team status matches -2147483648..2147483647 run scoreboard players set can_choose_team status 0
 execute unless score map status matches -2147483648..2147483647 run scoreboard players set map status 1
+execute unless score timer status matches -2147483648..2147483647 run scoreboard players set timer status 0
+execute unless score time status matches -2147483648..2147483647 run scoreboard players set time status 300
 
 scoreboard objectives add timer.tick dummy "耗時-刻"
 scoreboard objectives add timer.second dummy "耗時-秒"

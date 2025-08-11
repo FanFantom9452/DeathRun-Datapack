@@ -19,7 +19,19 @@ execute if block ~ ~ ~ nether_portal if entity @e[type=marker,tag=death_god_neth
 #重製特殊屬性
 attribute @s[team=!runner] block_interaction_range base reset
 attribute @s[team=!death_god] scale base reset
+
+#重製
+execute if score status status matches 0 if entity @s[tag=playing] run team leave @s
+execute if score status status matches 0 if entity @s[tag=playing] run tag @s remove playing
+
+
 #死神運作
 execute if score status status matches 1 if entity @s[team=death_god,gamemode=adventure] run function system:type/player/death_god/tick
 #逃亡者運作 | 碰到水死亡 | 抵達終點
 execute if score status status matches 1 if entity @s[team=runner,gamemode=adventure] run function system:type/player/runner/tick
+
+
+
+#跑到設定房
+execute if entity @s[x=-1988,y=95,z=-1988,dx=10,dy=5,dz=10,gamemode=!creative] run tellraw @s [{text:"僅限創造模式進入",color:"red"}]
+execute if entity @s[x=-1988,y=95,z=-1988,dx=10,dy=5,dz=10,gamemode=!creative] run tp @s -1990 91 -2013 38 -10
