@@ -3,7 +3,7 @@ tellraw @a [{text:"當前所有訊息"}]
 
 
 
-tellraw @a [{text:"地圖 : 未知"}]
+function system:type/sign/show_map_name
 
 
 tellraw @a [{text:"死神 : "},{selector:"@a[team=death_god]"}]

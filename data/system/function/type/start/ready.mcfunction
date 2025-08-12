@@ -24,7 +24,7 @@ scoreboard players reset @a dash_right.cd
 scoreboard players reset @a death
 scoreboard players reset @a one_round_death
 clear @a
-scoreboard players set @a[team=runner] life 5
+execute as @a[team=runner] run scoreboard players operation @s life = life status
 #重製排名
 scoreboard players reset * rank
 scoreboard players set @a[team=runner] rank -9487945
