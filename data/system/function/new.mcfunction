@@ -5,7 +5,8 @@ bossbar add minecraft:time "剩餘時間"
 bossbar set minecraft:time color green
 
 
-scoreboard objectives add list dummy "§c【§f飯桶工作室§c】§e死亡跑酷"
+scoreboard objectives add list dummy ""
+scoreboard objectives modify list displayname "§c【§f飯桶工作室§c】§6返祖死亡跑酷"
 scoreboard players reset * list
 scoreboard players set 剩餘時間 list 300
 scoreboard objectives setdisplay sidebar list
@@ -17,6 +18,7 @@ scoreboard objectives add death deathCount "死亡觸發"
 scoreboard objectives add one_round_death dummy "一局死亡次數"
 scoreboard objectives add total.kill dummy "擊殺數"
 scoreboard objectives add total.death dummy "總死亡次數"
+scoreboard objectives add total.games dummy "總遊玩次數"
 scoreboard objectives add life dummy "玩家復活剩餘次數"
 scoreboard objectives setdisplay list life
 
@@ -57,6 +59,26 @@ scoreboard objectives add checkpoint.cd dummy "不能踩checkpoint 冷卻"
 
 scoreboard objectives add command dummy "指令用 不重要的資料丟這裡"
 scoreboard objectives add sand_bomb dummy "沙漠炸彈 隨機偵測"
+setworldspawn -1990 91 -2013
+
+kill @e[type=armor_stand,tag=author]
+summon armor_stand -2021 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[302f,0f,0f],LeftLeg:[0f,0f,342f],RightLeg:[0f,0f,12f],Head:[273f,0f,0f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:diamond_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:gold",pattern:"minecraft:silence"}}},legs:{id:"minecraft:diamond_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:gold",pattern:"minecraft:silence"}}},chest:{id:"minecraft:diamond_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:gold",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"CuteLime"}}},mainhand:{id:"minecraft:grass_block",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:wooden_axe",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"CuteLime"}
+
+summon armor_stand -2016 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[237f,325f,1f],RightArm:[263f,68f,0f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:golden_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},legs:{id:"minecraft:golden_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},chest:{id:"minecraft:golden_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"Fan_Fan_tom"}}},mainhand:{id:"minecraft:command_block",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:gold_block",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"Fan_Fan_tom"}
+
+
+summon armor_stand -2011 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[301f,339f,1f],RightArm:[335f,0f,104f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:netherite_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},legs:{id:"minecraft:netherite_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},chest:{id:"minecraft:netherite_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"Genius_Timing"}}},mainhand:{id:"minecraft:diamond_sword",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:netherite_axe",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"Genius_Timing"}
+
+kill @e[type=interaction,tag=author]
+summon interaction -2021 93 -1961 {width:3f,height:3f,response:1b,Tags:["cutelime","author"]}
+summon interaction -2016 93 -1961 {width:3f,height:3f,response:1b,Tags:["fan","author"]}
+summon interaction -2011 93 -1961 {width:3f,height:3f,response:1b,Tags:["timing","author"]}
+
+
+
+
+
+
 #生成目標點(object)：
 kill @e[type=marker,tag=object]
 summon marker 0.0 0.0 0.0 {Tags:["object"]}
@@ -116,6 +138,38 @@ team modify finish collisionRule never
 team modify finish friendlyFire false
 team modify finish prefix [{text:"§a【抵達終點】§r"}]
 
+team add time "剩餘時間"
+function system:type/update_time_team
+team modify time color reset
+team join time 剩餘時間
+
+team add is_dlc "是否為DLC版本"
+team modify is_dlc color reset
+team modify is_dlc suffix [{text:"【免費版本】",color:"green"}]
+team join is_dlc 當前版本
+scoreboard players set 當前版本 list -1
+
+team add ads "廣告"
+team modify ads color reset
+team modify ads suffix [{text:" : ",color:"gray"},{text:"DLC版本加入會員領取",color:"yellow"}]
+team join ads 資訊
+scoreboard players set 資訊 list -2
+
+kill @e[type=text_display,tag=text]
+summon text_display -2013 102 -2013 {billboard:"fixed",alignment:"center",Rotation:[315F,20F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[5f,5f,5f]},text:{"bold":true,"color":"green","text":"隊伍選擇"}}
+summon text_display -1987 102 -1987 {billboard:"fixed",alignment:"center",Rotation:[135F,20F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[5f,5f,5f]},text:{"bold":true,"color":"gold","text":"設定房間"}}
+summon text_display -2012 97 -1988 {billboard:"fixed",alignment:"center",Rotation:[225F,20F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[5f,5f,5f]},text:{"bold":true,"color":"yellow","text":"遊戲介紹"}}
+
+
+summon text_display -2016 96 -1959 {billboard:"fixed",alignment:"center",Rotation:[180F,10F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[5f,5f,5f]},text:[{"color":"red","text":"【"},{"color":"white","text":"飯桶工作室"},{"color":"red","text":"】"}]}
+
+
+summon text_display -2016 92 -1963 {billboard:"fixed",alignment:"center",Rotation:[180F,-10F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.5f,1.5f,1.5f]},text:[{"color":"yellow","text":"【"},{"color":"white","text":"指令、企劃"},{"color":"yellow","text":"】"}]}
+
+summon text_display -2011 92 -1963 {billboard:"fixed",alignment:"center",Rotation:[180F,-10F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.5f,1.5f,1.5f]},text:[{"color":"gold","text":"【"},{"color":"white","text":"建築、裝飾、陷阱設計"},{"color":"gold","text":"】"}]}
+summon text_display -2021 92 -1963 {billboard:"fixed",alignment:"center",Rotation:[180F,-10F],Tags:["text"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.5f,1.5f,1.5f]},text:[{"color":"gold","text":"【"},{"color":"white","text":"建築、裝飾、陷阱設計"},{"color":"gold","text":"】"}]}
+
+
 
 #禁止進入傳送門
 gamerule playersNetherPortalCreativeDelay 1000000000
@@ -142,4 +196,5 @@ gamerule spawnChunkRadius 0
 gamerule naturalRegeneration false
 gamerule maxEntityCramming 0
 #start loop
+schedule clear system:type/tick
 function system:type/tick

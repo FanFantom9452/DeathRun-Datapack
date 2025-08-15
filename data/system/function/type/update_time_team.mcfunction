@@ -1,0 +1,2 @@
+#Made By Fan_Fan_tom
+team modify time suffix [{text:" [ ",color:"gray"},{score:{name:"剩餘時間",objective:"list"},color:"green",bold:true},{text:" / ",color:"gray"},{score:{name:"time",objective:"status"},color:"gray",bold:true},{text:" ] ",color:"gray"}]

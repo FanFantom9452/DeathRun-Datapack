@@ -1,6 +1,7 @@
 #Made By Fan_Fan_tom
 gamemode adventure @a
 clear @a
+effect give @a resistance 13 4 true
 tp @a -1000 103 -1007 0 0
 
 tp @a[team=1st] -1000 107 -993 180 10

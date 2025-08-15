@@ -6,3 +6,4 @@ scoreboard players set status status 0
 bossbar set minecraft:time players
 team leave @a
 
+function system:new

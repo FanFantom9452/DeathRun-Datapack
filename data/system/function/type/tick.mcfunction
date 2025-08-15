@@ -9,6 +9,7 @@ execute as @e[type=marker] at @s run function system:type/marker_tick
 #大廳告示牌
 function system:type/sign/set
 
+execute as @e[type=interaction,tag=author] at @s run function system:type/interaction_tick
 
 
 kill @e[type=item]
