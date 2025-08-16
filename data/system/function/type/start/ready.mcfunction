@@ -24,6 +24,7 @@ scoreboard players reset @a dash_left.cd
 scoreboard players reset @a dash_right.cd
 scoreboard players reset * death
 scoreboard players reset * one_round_death
+scoreboard players set @a[team=runner] one_round_death 0
 scoreboard players add @a[team=runner] total.games 1
 clear @a
 execute as @a[team=runner] run scoreboard players operation @s life = life status

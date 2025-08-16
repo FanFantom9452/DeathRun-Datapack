@@ -59,12 +59,12 @@ scoreboard objectives add checkpoint.cd dummy "不能踩checkpoint 冷卻"
 
 scoreboard objectives add command dummy "指令用 不重要的資料丟這裡"
 scoreboard objectives add sand_bomb dummy "沙漠炸彈 隨機偵測"
-setworldspawn -1990 91 -2013
+setworldspawn -1989 91 -2011
 
 kill @e[type=armor_stand,tag=author]
 summon armor_stand -2021 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[302f,0f,0f],LeftLeg:[0f,0f,342f],RightLeg:[0f,0f,12f],Head:[273f,0f,0f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:diamond_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:gold",pattern:"minecraft:silence"}}},legs:{id:"minecraft:diamond_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:gold",pattern:"minecraft:silence"}}},chest:{id:"minecraft:diamond_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:gold",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"CuteLime"}}},mainhand:{id:"minecraft:grass_block",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:wooden_axe",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"CuteLime"}
 
-summon armor_stand -2016 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[237f,325f,1f],RightArm:[263f,68f,0f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:golden_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},legs:{id:"minecraft:golden_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},chest:{id:"minecraft:golden_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"Fan_Fan_tom"}}},mainhand:{id:"minecraft:command_block",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:gold_block",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"Fan_Fan_tom"}
+summon armor_stand -2016 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[235f,0f,0f],RightArm:[289f,0f,0f],LeftLeg:[0f,0f,352f],RightLeg:[0f,0f,5f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:golden_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},legs:{id:"minecraft:golden_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},chest:{id:"minecraft:golden_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"Fan_Fan_tom"}}},mainhand:{id:"minecraft:command_block",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:gold_block",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"Fan_Fan_tom"}
 
 
 summon armor_stand -2011 93 -1961 {CustomNameVisible:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["author"],Pose:{LeftArm:[301f,339f,1f],RightArm:[335f,0f,104f]},DisabledSlots:4144959,Rotation:[180F,0F],equipment:{feet:{id:"minecraft:netherite_boots",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},legs:{id:"minecraft:netherite_leggings",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},chest:{id:"minecraft:netherite_chestplate",count:1,components:{"minecraft:enchantment_glint_override":true,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:silence"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{name:"Genius_Timing"}}},mainhand:{id:"minecraft:diamond_sword",count:1,components:{"minecraft:enchantment_glint_override":true}},offhand:{id:"minecraft:netherite_axe",count:1,components:{"minecraft:enchantment_glint_override":true}}},CustomName:"Genius_Timing"}
@@ -195,6 +195,10 @@ gamerule locatorBar false
 gamerule spawnChunkRadius 0
 gamerule naturalRegeneration false
 gamerule maxEntityCramming 0
+
+
+execute as @a at @s run playsound entity.experience_orb.pickup master @s ~ ~ ~ 1 1 1
+tellraw @a [{text:"已初始化系統",color:"green"}]
 #start loop
 schedule clear system:type/tick
 function system:type/tick
